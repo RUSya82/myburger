@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logoImg from '../image/logo.svg';
+import signImg from '../image/sign.svg';
 
 const NavBarStyled = styled.header`
     position: fixed;
@@ -26,22 +27,13 @@ const H1 = styled.h1`
 const ImgLogo = styled.img`
     width: 50px;
 `;
-const LoginButton = styled.button`
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    outline: none;
-    &:hover {
-        outline: none;
-        background-color: #e4f3e8;
-    }
-    &:active {
-        position: relative;
-        top: 1px;
-        left: 1px;
-        outline: none;
-        background-color: white;
-    }
+
+const Login = styled.button`
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    font-size: 16px;
 `;
 export const NavBar = () => (
     <NavBarStyled>
@@ -49,6 +41,9 @@ export const NavBar = () => (
             <ImgLogo src={logoImg} alt="logo"/>
             <H1>My Burger</H1>
         </Logo>
-        <LoginButton>Sigh in</LoginButton>
+       <Login>
+           <img src={signImg} alt="войти"/>
+           <p>войти</p>
+       </Login>
     </NavBarStyled>
 );
