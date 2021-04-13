@@ -37,6 +37,7 @@ const Description = styled.div`
     justify-content: space-between;
     padding: 0 50px;
     font-size: 30px;
+    font-family: Pacifico;
 `;
 const ButtonModal = styled.button`
     width: 250px;
