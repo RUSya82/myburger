@@ -13,6 +13,16 @@ const TrashButton = styled.button`
     background-image: url(${trashImage});
 `;
 
+const ItemName = styled.span`
+    flex-grow: 1;
+`;
+const ItemPrice = styled.span`
+    margin-left: 20px;
+    margin-right: 10px;
+    min-width: 65px;
+    text-align: right;
+`;
+
 const OrderItemStyled = styled.li`
     display: flex;
     margin: 15px 9;
@@ -20,9 +30,9 @@ const OrderItemStyled = styled.li`
 export const OrderListItem = () => {
     return (
         <OrderItemStyled>
-            <span>JS Burger</span>
+            <ItemName>JS Burger</ItemName>
             <span>2</span>
-            <span>750 Р</span>
+            <ItemPrice>750 Р</ItemPrice>
             <TrashButton/>
         </OrderItemStyled>
     );

@@ -12,6 +12,7 @@ export const ButtonCheckout = styled.button`
     font-family: inherit;
     border-color: transparent;
     cursor: pointer;
+    margin: 0 auto;
     transition-property: color, background-color, border-color;
     transition-duration: .3s;
     &:hover{
