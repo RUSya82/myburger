@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ButtonCheckout} from "./ButtonCheckout";
 
 const Overlay = styled.div`
     position: fixed;
@@ -28,26 +29,27 @@ const Banner = styled.div`
     width: 100%;
     background-size: cover;
     background-position: center;
-    margin-bottom: 20px;
     background-image: url(${({img}) => img});
 `;
 const Description = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 20px 50px;
     font-size: 30px;
     font-family: Pacifico;
 `;
-const ButtonModal = styled.button`
-    width: 250px;
-    height: 65px;
-    background-color: #299B01;
-    font-size: 21px;
-    color: #fff;
-`;
+
 const CheckboxField = styled.div`
     flex: 1 0 auto;
+`;
+
+const Content = styled.div`
+    flex: 1 0  calc(100% - 200px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const ModalItem = ({openItem, setOpenItem}) => {
@@ -63,15 +65,17 @@ export const ModalItem = ({openItem, setOpenItem}) => {
         <Overlay id="overlay" onClick={closeModal}>
             <Modal>
                 <Banner img={openItem.img}/>
-                <Description>
-                    <h3>{openItem.name}</h3>
-                    <span>{openItem.price.toLocaleString('ru-RU',
-                        {style:'currency', currency:'RUB'})}</span>
-                </Description>
-                <CheckboxField/>
-                <ButtonModal>
-                    Добавить
-                </ButtonModal>
+                <Content>
+                    <Description>
+                        <h3>{openItem.name}</h3>
+                        <span>{openItem.price.toLocaleString('ru-RU',
+                            {style:'currency', currency:'RUB'})}</span>
+                    </Description>
+                    <CheckboxField/>
+                    <ButtonCheckout>
+                        Добавить
+                    </ButtonCheckout>
+                </Content>
             </Modal>
         </Overlay>
     );
